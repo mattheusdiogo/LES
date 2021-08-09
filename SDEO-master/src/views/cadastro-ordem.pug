@@ -1,0 +1,27 @@
+doctype html
+html(lang="pt-br")
+  head
+    title Cadastro de ordem - SDEO
+    include includes/head
+  body
+    include includes/painel-ajuda
+    include includes/modal
+    .system
+      .system__logo
+        a.system__logo__link(onclick="paraIndex()")
+          embed(src="./img/logotipo.svg" alt="logotipo da LBomfim" tabindex="-1")
+      form#formularioCadastro.system__form
+        h1.system__form__title cadastro de ordem
+        p.system__form__label(for="codigoOrdem") #[strong número da ordem:]
+        label.system__form__placeholder(for="codigoOrdem") é um número do tipo "12345"
+        input.system__form__input(id="numeroCadastro" type="number" name="numeroOrdem" tabindex="1")
+        button.system__form__submit.primary-button(tabindex="2")
+          i.fas.fa-plus-circle
+          | cadastrar ordem
+      .system__link
+        p.link(onclick="paraIndex()" tabindex="3") voltar para a tela inicial
+      .system__help
+        button.system__help__button.secondary-button(id="botaoAjuda" onclick="abrirPainelAjuda()" tabindex="4")
+          i.fas.fa-question-circle
+          | preciso de ajuda
+    script(src="/socket.io/socket.io.js")

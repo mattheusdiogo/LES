@@ -1,0 +1,981 @@
+$primary: #396afc;
+$secondary: #2948ff;
+$base-text: #333;
+$whatsapp: #25d366;
+$google-maps: #e83c2e;
+$focus: #ffa500;
+$white: #fff;
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background: $white;
+  //filter: invert(1);
+}
+
+//placeholder
+::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+:-ms-input-placeholder {
+  color: #aaa;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+//selection
+::-moz-selection {
+  color: $white;
+  background: $primary;
+}
+
+::selection {
+  color: $white;
+  background: $primary;
+}
+
+//begin remove input type number arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:invalid {
+  border-color: $google-maps;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+//end remove input type number arrows
+
+body,
+input,
+textarea,
+button {
+  font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+  border: none;
+  color: $base-text;
+  resize: none;
+}
+
+*:focus {
+  outline-color: $focus;
+  outline-style: dashed;
+  outline-width: 2px;
+  outline-offset: 1px;
+}
+
+input {
+  box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+strong {
+  font-weight: 700;
+}
+
+.primary-button {
+  width: 300px;
+  height: 44px;
+  border-radius: 6px;
+  background: $primary;
+  //background: -webkit-linear-gradient(to right, $secondary, $primary);
+  //background: linear-gradient(to right, $secondary, $primary);
+  color: $white;
+  font-size: 1.8em;
+  font-weight: 700;
+  box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    background: lighten($primary, 3%);
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  &:active {
+    background: darken($primary, 3%);
+    transform: translateY(2px);
+    transition: 0.1s;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.secondary-button {
+  width: 300px;
+  height: 44px;
+  border-radius: 6px;
+  background: $white;
+  border: $primary 2px solid;
+  color: $primary;
+  font-size: 1.8em;
+  font-weight: 700;
+  transition: 0.2s;
+  box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    background: lighten($primary, 33%);
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    transition: 0.1s;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.detructive-button {
+  width: 300px;
+  height: 44px;
+  border-radius: 6px;
+  background: $google-maps;
+  //background: -webkit-linear-gradient(to right, $secondary, $primary);
+  //background: linear-gradient(to right, $secondary, $primary);
+  color: $white;
+  font-size: 1.8em;
+  font-weight: 700;
+  box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    background: lighten($google-maps, 3%);
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  &:active {
+    background: darken($google-maps, 3%);
+    transform: translateY(2px);
+    transition: 0.1s;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.link {
+  font-size: 1.8em;
+  color: $secondary;
+  text-decoration: underline;
+  font-weight: 700;
+
+  &:hover {
+    color: $primary;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &__remove {
+    margin-top: 22px;
+    font-size: 1.8em;
+    color: $google-maps;
+    text-decoration: underline;
+    font-weight: 700;
+    text-align: center;
+
+    &:hover {
+      color: darken($google-maps, 8%);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.system {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  &__sdeo {
+    width: 300px;
+    position: fixed;
+    top: 72px;
+  }
+
+  &__guides {
+    position: fixed;
+    top: 72px;
+    width: 300px;
+
+    &__title {
+      font-size: 2.4em;
+      font-weight: 700;
+      font-family: "Ubuntu", sans-serif;
+      color: $base-text;
+      text-align: right;
+      line-height: 1.4em;
+    }
+
+    &__subtitle {
+      font-size: 1.6em;
+      color: $base-text;
+      text-align: right;
+      margin-bottom: 10px;
+      line-height: 1.4em;
+    }
+
+    &__option {
+      width: 300px;
+      font-size: 1.8em;
+      margin-bottom: 16px;
+
+      i {
+        font-size: 1em;
+        margin-right: 18px;
+        margin-top: 2px;
+        float: right;
+      }
+
+      &__content {
+        background-color: $white;
+        height: 128px;
+        padding: 8px;
+        font-size: 1.8em;
+        line-height: 1.6em;
+        border: 2px $primary solid;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        display: none;
+        overflow: hidden;
+        box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+        margin-bottom: 16px;
+        margin-top: -16px;
+        overflow-y: auto;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.8em;
+    margin-top: 6px;
+    color: $base-text;
+    margin-bottom: 2px;
+  }
+
+  &__link {
+    position: fixed;
+    bottom: 86px;
+  }
+
+  &__subtitle-order {
+    font-size: 2em;
+    font-weight: 700;
+    color: $base-text;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+
+  &__order-details {
+    position: fixed;
+    top: 74px;
+    height: 69%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    //padding-bottom: 16px;
+
+    &__title {
+      font-size: 2.4em;
+      text-align: right;
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 700;
+      color: $base-text;
+    }
+
+    &__observation {
+      width: 300px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+
+      &__link {
+        font-size: 1.8em;
+        color: $secondary;
+        text-decoration: underline;
+        font-weight: 700;
+        text-align: right;
+
+        &:hover {
+          color: $primary;
+          cursor: pointer;
+          transition: 0.2s;
+        }
+        &:active {
+          box-shadow: none;
+        }
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      /*&__edit {
+        float: right;
+        margin-top: -20px;
+
+        i {
+          font-size: 2em;
+          color: $primary;
+
+          &:hover {
+            color: lighten($primary, 6%);
+            cursor: pointer;
+            transition: 0.2s;
+          }
+
+          &:active {
+            color: darken($primary, 3%);
+            transition: 0.1s;
+            transform: translateY(1px);
+          }
+        }
+      }*/
+
+      &__title {
+        color: $base-text;
+        font-size: 2em;
+        font-weight: 700;
+        margin-top: 0px;
+      }
+    }
+
+    &__image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 56px);
+      grid-template-rows: repeat(2, 56px);
+      grid-gap: 22px;
+
+      &__picture {
+        border-radius: 6px;
+        border: 2px solid $primary;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+        background-color: $secondary;
+        margin: auto;
+
+        img {
+          width: 56px;
+          height: 56px;
+        }
+
+        &:hover {
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          cursor: pointer;
+          transition: 0.2s;
+        }
+
+        &:active {
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.4);
+          transform: translateY(2px);
+          transition: 0.1s;
+        }
+
+        &__remove {
+          position: absolute;
+          z-index: 2;
+          background: $google-maps;
+          float: right;
+          margin-left: 40px;
+          margin-top: -8px;
+          border-radius: 24px;
+          width: 22px;
+          height: 22px;
+          border: 2px solid $white;
+
+          &:hover {
+            background: lighten($google-maps, 3%);
+            cursor: pointer;
+            transition: 0.2s;
+          }
+
+          &:active {
+            background: darken($google-maps, 3%);
+            transition: 0.1s;
+          }
+
+          i {
+            font-size: 1.7em;
+            color: $white;
+            margin-left: 5.6px;
+            margin-top: 1.9px;
+          }
+        }
+      }
+
+      &__add {
+        font-size: 56px;
+        color: $primary;
+
+        &:hover {
+          color: lighten($primary, 3%);
+          cursor: pointer;
+          transition: 0.2s;
+        }
+
+        &:active {
+          color: darken($primary, 3%);
+          transform: translateY(1px);
+          transition: 0.1s;
+        }
+      }
+    }
+  }
+
+  &__form {
+    position: fixed;
+    bottom: 120px;
+    width: 300px;
+
+    &__title {
+      font-size: 2.4em;
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 700;
+      width: 300px;
+      text-align: right;
+      position: fixed;
+      bottom: 280px;
+      color: $base-text;
+    }
+
+    &__label {
+      font-size: 1.8em;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    &__placeholder {
+      font-size: 1.6em;
+    }
+
+    &__input {
+      width: 288px;
+      height: 40px;
+      border-radius: 6px;
+      padding-left: 8px;
+      font-size: 1.8em;
+      border: 2px solid $primary;
+      margin-top: 4px;
+      margin-bottom: 16px;
+
+      &-alt {
+        width: 100%;
+        height: 40px;
+        border-radius: 6px;
+        padding-left: 8px;
+        font-size: 1.8em;
+        border: 2px solid $primary;
+        margin-top: 4px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &__submit {
+      width: 300px;
+
+      i {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &__logo {
+    width: 289px;
+    display: fixed;
+    margin-top: 24px;
+    top: 0;
+
+    &__link {
+      font-size: 4em;
+      cursor: pointer;
+    }
+
+    embed {
+      pointer-events: none;
+    }
+  }
+
+  &__quick-access {
+    display: block;
+    position: fixed;
+    top: 30%;
+
+    i {
+      margin-right: 6px;
+    }
+
+    &__call {
+      width: 300px;
+    }
+
+    &__whatsapp {
+      margin: 16px 0;
+      width: 300px;
+      height: 44px;
+      border-radius: 6px;
+      background-color: $whatsapp;
+      border: $whatsapp 2px solid;
+      color: $white;
+      font-size: 1.8em;
+      font-weight: 700;
+      transition: 0.2s;
+      box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+      &:hover {
+        background-color: lighten($whatsapp, 3%);
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+      }
+
+      &:active {
+        transform: translateY(2px);
+        background-color: $whatsapp;
+        transition: 0.1s;
+        box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
+        color: $white;
+      }
+    }
+
+    &__maps {
+      width: 300px;
+      height: 44px;
+      border-radius: 6px;
+      background-color: $google-maps;
+      border: $google-maps 2px solid;
+      color: $white;
+      font-size: 1.8em;
+      font-weight: 700;
+      transition: 0.2s;
+      box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+      &:hover {
+        background-color: lighten($google-maps, 3%);
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 1px 2px 12px 0px rgba(0, 0, 0, 0.4);
+      }
+
+      &:active {
+        transform: translateY(2px);
+        background-color: $google-maps;
+        transition: 0.1s;
+        box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
+        color: $white;
+      }
+    }
+  }
+
+  &__search {
+    position: fixed;
+    margin-bottom: 146px;
+    bottom: 0;
+
+    &__input {
+      width: 172px;
+      height: 38px;
+      border-radius: 6px;
+      padding-left: 12px;
+      font-size: 1.8em;
+      border: 2px solid $primary;
+      border-right: none;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &__button {
+      width: 112px;
+      height: 44px;
+      float: right;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      position: relative;
+      z-index: 2;
+
+      i {
+        margin-left: 6px;
+      }
+
+      &:active {
+        transform: none;
+      }
+    }
+  }
+
+  &__add {
+    position: fixed;
+    margin-bottom: 88px;
+    bottom: 0;
+
+    &__button {
+      width: 300px;
+
+      i {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  &__help {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 24px;
+
+    &__button {
+      width: 192px;
+      border-radius: 6px;
+
+      i {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &__search-results {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 72px;
+    overflow-y: auto;
+
+    &__title {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 2.4em;
+      font-weight: 700;
+      text-align: right;
+      color: $base-text;
+    }
+
+    &__result {
+      margin: 12px auto;
+      height: 32px;
+      width: 284px;
+
+      p {
+        text-align: center;
+        line-height: 0.2em;
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.69);
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  display: block;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+
+  &__content {
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    background: $white;
+    top: 96px;
+    position: fixed;
+    box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+    &__close {
+      float: right;
+      margin-right: 12px;
+      margin-top: 8px;
+      font-size: 2.8em;
+      color: $base-text;
+
+      &:hover {
+        color: lighten($base-text, 9%);
+        cursor: pointer;
+      }
+
+      &:active {
+        color: darken($base-text, 3%);
+        transform: translateY(1px);
+      }
+    }
+
+    &__text {
+      margin: 28px 20px 26px 20px;
+      font-size: 2.4em;
+      line-height: 1.6em;
+    }
+
+    &__description {
+      margin: 0px 0px 0px 20px;
+      font-size: 1.8em;
+      line-height: 1.5em;
+      max-width: 260px;
+      word-wrap: break-word;
+      max-height: 125px;
+      overflow-y: auto;
+    }
+
+    &__input {
+      margin-left: 4%;
+      border: 2px solid $primary;
+      border-radius: 6px;
+      width: 87.9%;
+      height: 90px;
+      font-size: 1.8em;
+      padding-left: 8px;
+    }
+
+    &__buttons {
+      position: absolute;
+      bottom: 12px;
+      input {
+        margin: 12px;
+        margin-bottom: 2px;
+        width: 276px;
+      }
+    }
+  }
+}
+
+.modal-imagem {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.69);
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  display: block;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+
+  &__content {
+    width: 300px;
+    height: 430px;
+    border-radius: 6px;
+    background: $white;
+    top: 96px;
+    position: fixed;
+    box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+    img {
+      width: 280px;
+      height: 280px;
+      margin-left: 10px;
+      margin-bottom: -2px;
+    }
+
+    &__close {
+      float: right;
+      margin-right: 12px;
+      margin-top: 8px;
+      font-size: 2.8em;
+      color: $base-text;
+
+      &:hover {
+        color: lighten($base-text, 9%);
+        cursor: pointer;
+      }
+
+      &:active {
+        color: darken($base-text, 3%);
+        transform: translateY(1px);
+      }
+    }
+
+    &__text {
+      margin: 28px 20px 26px 20px;
+      font-size: 2.4em;
+      line-height: 1.6em;
+    }
+
+    &__buttons {
+      input {
+        margin: 12px;
+        margin-bottom: 2px;
+        width: 276px;
+      }
+    }
+  }
+}
+
+.modal-ajuda {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.69);
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  display: none;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+
+  &__content {
+    width: 300px;
+    height: 496px;
+    border-radius: 6px;
+    background: $white;
+    top: 36px;
+    position: fixed;
+    box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.4);
+
+    &__close {
+      float: right;
+      margin-right: 12px;
+      margin-top: 8px;
+      font-size: 2.8em;
+      color: $base-text;
+
+      &:hover {
+        color: lighten($base-text, 9%);
+        cursor: pointer;
+      }
+
+      &:active {
+        color: darken($base-text, 3%);
+        transform: translateY(1px);
+      }
+    }
+
+    &__title {
+      margin: 4px 12px 2px 12px;
+      font-size: 2.4em;
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 700;
+      line-height: 1.6em;
+    }
+
+    &__items {
+      &__text {
+        font-size: 2.2em;
+        font-weight: 700;
+        color: $secondary;
+        margin-left: 12px;
+        line-height: 1.2em;
+      }
+
+      &__options {
+        width: 300px;
+        position: absolute;
+        bottom: 16px;
+      }
+
+      input {
+        margin: 8px 12px;
+        width: 276px;
+      }
+    }
+
+    &__guide {
+      &__text {
+        font-size: 2.2em;
+        font-weight: 700;
+        color: $secondary;
+        margin-left: 12px;
+        line-height: 1.2em;
+      }
+
+      input {
+        margin: 8px 12px;
+        width: 276px;
+      }
+
+      p {
+        font-size: 1.8em;
+      }
+
+      ol {
+        margin: 0px 8px;
+        padding: 6px 28px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      ul {
+        li {
+          list-style-type: initial;
+        }
+        margin: 0px 20px;
+        padding: 12px;
+      }
+
+      li {
+        list-style-type: decimal;
+        line-height: 1.6em;
+        font-size: 1.8em;
+        margin-bottom: 4px;
+        font-weight: 700;
+
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+#botaoConfirmarAlteracao,
+#tituloEditarObservacao,
+#PopUpErroCadastroExiste,
+#PopUpErroBusca,
+#PopUpErroBuscaIntervalo,
+#PopUpErroEdicaoObservacao,
+#PopUpCadastro,
+#PopUpExclusao,
+#PopUpImagem,
+#PopUpObservacaoVazia,
+#PopUpObservacaoPreenchida,
+#PopUpEdicaoObservacao,
+#PopUpConfirmacaoAlteracao,
+#PopUpExclusaoImagem,
+#PopUpErroFormatoImagem,
+#AjudaConsulta,
+#AjudaCadastro,
+#AjudaAlteracao,
+#AjudaAdicaoImagem,
+#AjudaRemocaoImagem,
+#AjudaExclusaoImagem,
+#AjudaExtra {
+  display: none;
+}
+
+//tablet
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+
+//desktop
+@media (min-width: 1200px) {
+}

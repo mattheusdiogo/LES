@@ -1,0 +1,116 @@
+.modal#PopUpCadastro
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title cadastro efetuado =)
+    .modal__content__text ordem cadastrada com sucesso!
+    .modal__content__buttons
+      input#confirmarRemocao.primary-button(type="button" value="visualizar ordem" onclick="AcessarOrdem()")
+      input#cancelarRemocao.secondary-button(type="button" value="cadastrar outra ordem" onclick="fecharPopUp()")
+.modal#PopUpConfirmacaoAlteracao
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()") 
+      i.fas.fa-times
+    .modal-ajuda__content__title cuidado!
+    .modal__content__text tem certeza que deseja #[strong confirmar a alteração?]
+    .modal__content__buttons
+      input#confirmarAlteracao.detructive-button(type="button" value="sim, alterar observação" onclick="ConfirmarAlteracaoObservacao()")
+      input.secondary-button(type="button" value="não, cancelar alteração" onclick="fecharPopUp()")
+.modal#PopUpExclusaoImagem
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()") 
+      i.fas.fa-times
+    .modal-ajuda__content__title cuidado!
+    .modal__content__text tem certeza que deseja #[strong remover esta imagem?]
+    .modal__content__buttons
+      input.detructive-button(type="button" value="sim, remover imagem" onclick="ConfirmarRemocaoImagem()")
+      input.secondary-button(type="button" value="não, cancelar remoção" onclick="fecharPopUp()")
+.modal#PopUpExclusao
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title cuidado!
+    .modal__content__text tem certeza que deseja #[strong excluir esta ordem?]
+    .modal__content__buttons
+      input.detructive-button(type="button" value="sim, excluir ordem" onclick="ExcluirOrdem()")
+      input.secondary-button(type="button" value="não, cancelar exclusão" onclick="fecharPopUp()")
+.modal#PopUpErroBuscaIntervalo
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title algo deu errado =(
+    .modal__content__text número inválido, digite um número de 1 até 9999.
+    .modal__content__buttons
+      input.primary-button(type="button" value="tentar novamente" onclick="fecharPopUp()")
+.modal#PopUpErroBusca
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title algo deu errado =(
+    .modal__content__text desculpe, ordem não encontrada.
+    .modal__content__buttons
+      input#confirmarRemocao.primary-button(type="button" value="criar esta ordem" onclick="CadastrarOrdemBuscada()")
+      input#cancelarRemocao.secondary-button(type="button" value="tentar novamente" onclick="fecharPopUp()")
+.modal#PopUpErroCadastroExiste
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title algo deu errado =(
+    .modal__content__text desculpe, esta ordem já está cadastrada.
+    .modal__content__buttons
+      input#confirmarRemocao.primary-button(type="button" value="ir para a ordem" onclick="AcessarOrdem()")
+      input#cancelarRemocao.secondary-button(type="button" value="cadastrar outra ordem" onclick="fecharPopUp()")
+.modal#PopUpErroEdicaoObservacao
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title algo deu errado =(
+    .modal__content__text desculpe, a observação deve ter menos de 255 caracteres.
+    .modal__content__buttons
+      input.primary-button(type="button" value="tentar novamente" onclick="fecharPopUp()")
+.modal#PopUpObservacaoVazia
+  form#formularioObservacao.modal__content
+    .modal__content__close 
+      i.fas.fa-times(onclick="fecharPopUp()")
+    .modal-ajuda__content__title adicionar observacao
+    .modal__content__description(style="margin: 0;margin-left: 12px;") digite a nova observação:
+    textarea#inputObservacao.modal__content__input(placeholder="exemplo: motor incompatível com a peça em estoque" maxlength="255")
+    .modal__content__buttons
+      input.primary-button(type="submit" value="adicionar observacao")
+      input.secondary-button(type="button" value="voltar para a ordem" onclick="fecharPopUp()")
+.modal#PopUpObservacaoPreenchida
+  form.modal__content
+    .modal__content__close 
+      i.fas.fa-times(onclick="fecharPopUp()")
+    .modal-ajuda__content__title observação
+    #conteudoObservacao.modal__content__description 
+    .modal__content__buttons
+      input.primary-button(type="button" value="voltar para a ordem" onclick="fecharPopUp()")
+      input.secondary-button(type="button" value="editar observação" onclick="AbrirPopUpEdicaoObservacao()")
+.modal#PopUpEdicaoObservacao
+  form#formularioObservacaoEdicao.modal__content
+    .modal__content__close 
+      i.fas.fa-times(onclick="fecharPopUp()")
+    .modal-ajuda__content__title editar observação
+    .modal__content__description(style="margin: 0;margin-left: 12px;") digite a nova observação:
+    textarea#inputObservacao.modal__content__input.observacao-preenchida(placeholder="exemplo: motor incompatível com a peça em estoque" value="" maxlenght="255")
+    .modal__content__buttons
+      input.primary-button(type="submit" value="confirmar alteração" onclick="ConfirmarEdicaoObservacao()")
+      input.secondary-button(type="button" value="voltar para a ordem" onclick="fecharPopUp()")
+.modal-imagem#PopUpImagem
+  .modal-imagem__content
+    .modal-imagem__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title imagem
+    img#imagemPopUp
+    .modal-imagem__content__buttons
+      input.primary-button(type="submit" value="voltar para a ordem" onclick="fecharPopUp()" style="margin-bottom: 12px;")
+      a#botaoBaixarImagem.link(href="" style="margin-left: 88px;" target="_blank" download="imagem-SDEO-LBomfim.png") baixar imagem
+.modal-imagem#PopUpErroFormatoImagem
+  .modal__content
+    .modal__content__close(onclick="fecharPopUp()")
+      i.fas.fa-times
+    .modal-ajuda__content__title algo deu errado =(
+    .modal__content__text(style="margin-top: 16px") desculpe, são aceitas apenas imagens nos formatos: #[br] #[strong png, jpeg ou jpg.]
+    .modal__content__buttons
+      input.primary-button(type="button" value="tentar novamente" onclick="fecharPopUp()")

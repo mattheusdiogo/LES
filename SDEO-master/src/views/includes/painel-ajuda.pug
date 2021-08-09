@@ -1,0 +1,71 @@
+.modal-ajuda
+  .modal-ajuda__content
+    .modal-ajuda__content__close(onclick='fecharPopUp()')
+      i#painelAjuda.fas.fa-times
+    .modal-ajuda__content__title painel de ajuda
+    .modal-ajuda__content__items
+      .modal-ajuda__content__items__text qual tarefa você deseja realizar?
+      input.secondary-button(type="button" onclick="abrirItemAjuda('consulta')" value="consultar uma ordem" tabindex="0")
+      input.secondary-button(type="button" onclick="abrirItemAjuda('cadastro')" value="cadastrar uma ordem" tabindex="0")
+      input.secondary-button(type="button" onclick="abrirItemAjuda('alteracao')" value="alterar uma observação" tabindex="0")
+      input.secondary-button(type="button" onclick="abrirItemAjuda('adicaoImagem')" value="adicionar uma imagem" tabindex="0")
+      input.secondary-button(type="button" onclick="abrirItemAjuda('remocaoImagem')" value="remover uma imagem" tabindex="0")
+      input.secondary-button(type="button" onclick="abrirItemAjuda('extra')" value="consultar atalhos" tabindex="0")
+      p.link(onclick="paraIndex()" tabindex="0" style="text-align: center; margin-top: 6px;") voltar para a tela inicial
+    .modal-ajuda__content__guide#AjudaConsulta
+      .modal-ajuda__content__items__text consultando uma ordem:
+      ol
+        li #[span acesse a página inicial;]
+        li #[span no cambo de busca, digite o número da ordem a ser buscada (são aceitos valores de 1 a 9999);]
+        li #[span clique no botão "buscar" e, se a ordem for encontrada, você será redirecionado para sua página.]
+      .modal-ajuda__content__items__options
+        input.secondary-button(type="button" onclick="fecharPopUp()" value="fechar painel de ajuda" tabindex="0")
+        p.link(onclick="abrirPainelAjuda()" tabindex="0" style="text-align: center; margin-top: 6px;") voltar para a seleção
+    .modal-ajuda__content__guide#AjudaCadastro
+      .modal-ajuda__content__items__text cadastrando uma ordem:
+      ol
+        li #[span acesse a página inicial;] 
+        li #[span pressione o botão "cadastrar uma nova ordem";] 
+        li #[span preencha o campo com o número da ordem a ser cadastrada (são aceitos valores de 1 a 9999);]
+        li #[span pressione o botão "cadastrar ordem" e o número da ordem será cadastrado no sistema.]  
+      .modal-ajuda__content__items__options
+        input.secondary-button(type="button" onclick="fecharPopUp()" value="fechar painel de ajuda" tabindex="0")
+        p.link(onclick="abrirPainelAjuda()" tabindex="0" style="text-align: center; margin-top: 6px;") voltar para a seleção
+    .modal-ajuda__content__guide#AjudaAlteracao
+      .modal-ajuda__content__items__text alterando uma observação:
+      ol
+        li #[span acesse a página da ordem que você deseja alterar;]
+        li #[span pressione o ícone de lápis, no canto superior direito;]
+        li #[span altere a observação da forma que desejar;]
+        li #[span pressione "confirmar alteração" e depois "sim, alterar observação" para efetivar a alteração.]
+      .modal-ajuda__content__items__options
+        input.secondary-button(type="button" onclick="fecharPopUp()" value="fechar painel de ajuda" tabindex="0")
+        p.link(onclick="abrirPainelAjuda()" tabindex="0" style="text-align: center; margin-top: 6px;") voltar para a seleção
+    .modal-ajuda__content__guide#AjudaAdicaoImagem
+      .modal-ajuda__content__items__text adicionando imagens:
+      ol
+        li #[span acesse ou cadastre a ordem na qual deseja adicionar imagens;]
+        li #[span escolha em qual seção a imagem deve ir (pré ou pós execução);]
+        li #[span verifique se, na seção escolhida, existe o botão "+", permitindo a adição de mais imagens, se ele não estiver aparecendo, significa que aquela seção está lotada (possui oito imagens);]
+        li #[span caso contrário, clique nele e selecione a imagem que deseja adicionar, e ela será associada àquela ordem.] 
+      .modal-ajuda__content__items__options
+        input.secondary-button(type="button" onclick="fecharPopUp()" value="fechar painel de ajuda" tabindex="0")
+        p.link(onclick="abrirPainelAjuda()" tabindex="0" style="text-align: center; margin-top: 6px;") voltar para a seleção
+    .modal-ajuda__content__guide#AjudaRemocaoImagem
+      .modal-ajuda__content__items__text removendo imagens:
+      ol
+        li #[span acesse ou cadastre a ordem na qual deseja adicionar imagens;]
+        li #[span ao encontrar a imagem que deseja remover, clique no botão "x", no canto superio direito de seu quadro;]
+        li #[span confirme a remoção e a ordem será removida do sistema.]
+      .modal-ajuda__content__items__options
+        input.secondary-button(type="button" onclick="fecharPopUp()" value="fechar painel de ajuda" tabindex="0")
+        p.link(onclick="abrirPainelAjuda()" tabindex="0" style="text-align: center; margin-top: 6px;") voltar para a seleção
+    .modal-ajuda__content__guide#AjudaExtra
+      .modal-ajuda__content__items__text atalhos de teclado (desktop):
+      ul
+        li #[span pressione F1 para acessar ou fechar o painel de ajuda;]
+        li #[span pressione "enter" para submeter um formulário já preenchido;]
+        li #[span se necessário ou desejável, utilize a navegação pela tecla "Tab".]
+      .modal-ajuda__content__items__options
+        input.secondary-button(type="button" onclick="fecharPopUp()" value="fechar painel de ajuda" tabindex="0")
+        p.link(onclick="abrirPainelAjuda()" tabindex="0" style="text-align: center; margin-top: 6px;") voltar para a seleção

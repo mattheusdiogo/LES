@@ -1,0 +1,39 @@
+doctype html
+html(lang="pt-br")
+  head
+    title Detalhes da ordem - SDEO
+    include includes/head
+  body
+    include includes/painel-ajuda
+    include includes/modal
+    .system
+      .system__logo
+        a.system__logo__link(onclick="paraIndex()")
+          embed(src="./img/logotipo.svg" alt="Logotipo da LBomfim" tabindex="-1")
+      .system__order-details
+        h1#TituloOrdem.system__order-details__title ordem #0000
+        .system__order-details__observation
+          p#LinkOrdem.system__order-details__observation__link(onclick="AcessarObservacao()" tabindex="1") visualizar observação
+        h2.system__subtitle-order pré-execução:
+        .system__order-details__image-grid.preExecucao
+          .system__order-details__image-grid__add#inputImagemPreExecucao
+            i.fas.fa-plus-circle
+        h2.system__subtitle-order pós-execução:
+        .system__order-details__image-grid.posExecucao
+          .system__order-details__image-grid__add#inputImagemPosExecucao
+            i.fas.fa-plus-circle
+        p.link__remove(onclick="ExibirConfirmacaoExclusaoOrdem()" tabindex="2") remover ordem
+      .system__link
+        p.link(onclick="paraIndex()" tabindex="3") voltar para a tela inicial
+      .system__help
+        button.system__help__button.secondary-button(id="botaoAjuda" onclick="abrirPainelAjuda()" tabindex="4")
+          i.fas.fa-question-circle
+          | preciso de ajuda
+      form#envioImagem
+        input(id="enviarImagemPre" type="file" name="inputImagemPre" style="display: none;")
+        input(id="enviarImagemPos" type="file" name="inputImagemPos" style="display: none;")
+    script(src="/socket.io/socket.io.js")
+    script.
+      $("#inputImagemPreExecucao").click(function(){ $("#enviarImagemPre").trigger("click"); });
+      $("#inputImagemPosExecucao").click(function(){ $("#enviarImagemPos").trigger("click"); });
+      

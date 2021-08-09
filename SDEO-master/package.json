@@ -1,0 +1,54 @@
+{
+  "name": "sdeo",
+  "version": "0.0.5",
+  "description": "Sistema de Documentação de Execuções de Ordens - Laboratório de Engenharia de Software",
+  "main": "./src/controllers/app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinnicolasbq/SDEO.git"
+  },
+  "keywords": [
+    "SDEO",
+    "Sistema",
+    "Documentação",
+    "Execuções",
+    "Ordens",
+    "LBomfim",
+    "LES",
+    "Laboratório",
+    "Engenharia",
+    "Software"
+  ],
+  "author": "Kevin Quintino, Mattheus Solér & Vinícius de Jesus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinnicolasbq/SDEO/issues"
+  },
+  "homepage": "https://github.com/kevinnicolasbq/SDEO#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-terser-js": "^5.2.2",
+    "gulp-uglify": "^3.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.6",
+    "sequelize": "^6.3.5",
+    "socket.io": "^2.3.0",
+    "terser": "^4.8.0"
+  }
+}

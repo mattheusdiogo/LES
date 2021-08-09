@@ -1,0 +1,46 @@
+doctype html
+html(lang="pt-br")
+  head
+    title LBomfim - SDEO
+    include includes/head
+  body
+    include includes/painel-ajuda
+    include includes/modal
+    .system
+      .system__logo
+        a.system__logo__link(onclick="paraIndex()")
+          embed(src="./img/logotipo.svg" alt="logotipo da LBomfim" tabindex="-1")
+      .system__sdeo
+        .system__guides__title página inicial - SDEO
+        .system__guides__subtitle sistema de documentação #[br] de execuções de ordens
+      .system__quick-access
+        div
+          a(href="tel:11-xxxx-xxxx" tabindex="1")
+            button.system__quick-access__call.primary-button
+              i.fas.fa-phone-alt
+              | ligar para a empresa
+        div
+          a(href="https://chat.whatsapp.com/LxdrVT2evNNF5iGnnQQPmz" target="_blank" rel="noopener noreferrer" tabindex="2")
+            button.system__quick-access__whatsapp
+              i.fab.fa-whatsapp
+              | acessar o grupo da empresa
+        div
+          a(href="https://google.com.br/maps/place/PPA+LBOMFIM+Peccinin+Garen+Peças+Assistência+Motor+Cancelas+,+Manutenção/@-23.4467483,-46.5232519,17z/data=!3m1!4b1!4m5!3m4!1s0x94cef533fe016cf1:0x89252a58a22b6230!8m2!3d-23.4467532!4d-46.5210632" target="_blank" rel="noopener noreferrer" tabindex="3")
+            button.system__quick-access__maps
+              i.fas.fa-map-marker-alt
+              | consultar o google maps
+      .system__search
+        form#formularioBusca
+          input#numeroBusca.system__search__input(name="inputBusca" type="number" placeholder="número da ordem" tabindex="4")
+          button#botaoBusca.system__search__button.primary-button(tabindex="5")
+            | buscar
+            i.fas.fa-search
+      .system__add
+        button.system__add__button.primary-button(onclick="paraCadastroOrdem()" tabindex="6")
+          | cadastrar uma nova ordem
+          i.fas.fa-arrow-circle-right
+      .system__help
+        button.system__help__button.secondary-button(onclick="abrirPainelAjuda()" tabindex="7")
+          i.fas.fa-question-circle
+          | preciso de ajuda
+    script(src="/socket.io/socket.io.js")
